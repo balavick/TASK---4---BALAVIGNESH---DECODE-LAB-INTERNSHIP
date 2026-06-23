@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BV Electronics Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>BV Electronics</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <aside>
+            <h2>Navigation Hub</h2>
+            <ul>
+                <li><a href="#" id="control-panel">Control Panel</a></li>
+                <li><a href="#" id="live-inventory">Live Inventory</a></li>
+                <li><a href="#" id="performance-logs">Performance Logs</a></li>
+                <li><a href="#" id="system-settings">System Settings</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <div id="home-view">
+                <section class="main-content">
+                    <h2>Engineering the Future of Sound & Sight</h2>
+                    <p>
+                        Welcome to BV Electronics. We specialize in custom-engineered consumer hardware that bridges high-fidelity computational power with sustainable, minimalist design architecture. Explore our elite collections curated for pure clarity and performance.
+                    </p>
+                    <button id="explore">EXPLORE CATALOG</button>
+                </section>
+
+                <section class="product-categories">
+                    <h3>Product Collections</h3>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <h4>Acoustic Engineering</h4>
+                            <p>Studio-grade headphones and wireless ambient audio systems.</p>
+                        </div>
+                        <div class="category-card">
+                            <h4>Smart Automation</h4>
+                            <p>Intelligent, grounding hubs for intuitive home control ecosystems.</p>
+                        </div>
+                        <div class="category-card">
+                            <h4>Wearable Tech</h4>
+                            <p>Next-generation biometric trackers encased in refined composites.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <article>
+                    <span class="article-badge">Product Spotlight</span>
+                    <h2>BV-X1 Active Noise Cancelling Headphones</h2>
+                    <p class="article-meta">Published: May 2026 | Category: Premium Audio</p>
+                    
+                    <p>
+                        Experience acoustic purity with our latest flagship launch. The BV-X1 features custom-engineered 40mm dynamic drivers housed in a sustainably sourced composite shell, delivering immersive sound staging without sacrificing environmental responsibility.
+                    </p>
+                    
+                    <ul class="product-specs">
+                        <li>⚡ <strong>45-Hour Battery:</strong> Ultra-fast charging via USB-C.</li>
+                        <li>🛡️ <strong>Hybrid ANC:</strong> Advanced quad-microphone ambient isolation.</li>
+                        <li>🍃 <strong>Organic Materials:</strong> Recycled aluminum and vegan protein-leather.</li>
+                    </ul>
+
+                    <a href="#" class="article-link">Read full specifications &rarr;</a>
+                </article>
+            </div>
+
+            <div id="inventory-view" style="display: none;">
+                <section class="main-content">
+                    <h2>Live Product Inventory</h2>
+                    <p>Real-time synchronization with MongoDB Vault.</p>
+                </section>
+                <div id="inventory-list" class="category-grid" style="margin-top: 20px;"></div>
+            </div>
+
+            <div id="generic-view" style="display: none;">
+                <section class="main-content">
+                    <h2 id="generic-title">Dashboard</h2>
+                    <p id="generic-message">Loading platform data...</p>
+                </section>
+            </div>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>
+            &copy; 2026 Designed by Balavignesh | DecodeLabs Track Verification
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

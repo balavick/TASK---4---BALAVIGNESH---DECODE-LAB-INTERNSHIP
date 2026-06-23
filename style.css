@@ -1,0 +1,296 @@
+/* --- GLOBAL RESETS & DESIGN VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 2025 Aesthetics Mandatory Earth-Tone Palette */
+    --mocha-mousse: #A8856F;   /* Represents Stability */
+    --ethereal-blue: #A0D4E0;  /* Represents Trust */
+    --moonlit-grey: #F2F0EA;   /* Represents Refinement */
+    --dark-neutral: #1E1C1A;   /* Deep grounding background tone */
+    --card-bg: #292624;        /* Soft container contrast element */
+    
+    /* Typography Rules (Max 2 Font Families) */
+    --font-headline: 'Inter', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--dark-neutral);
+    color: var(--moonlit-grey);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- TYPOGRAPHY PAIRINGS --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Fluid Responsive Typography via clamp() */
+h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    color: var(--moonlit-grey);
+}
+
+h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+p {
+    font-size: 1rem;
+    color: rgba(242, 240, 234, 0.8);
+}
+
+/* --- MICRO COMPONENTS (Flexbox Layer) --- */
+header {
+    background-color: var(--dark-neutral);
+    padding: 35px 20px 20px 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-top: 1px solid rgba(242, 240, 234, 0.05);
+    border-bottom: 1px solid rgba(242, 240, 234, 0.05);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--ethereal-blue);
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--ethereal-blue);
+    color: var(--dark-neutral);
+}
+
+/* --- MACRO LAYOUT STRUCTURAL MECHANICS (Mobile-First Architecture) --- */
+
+/* Mobile View Default: Single Column Stacking */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    min-height: 70vh;
+}
+
+aside {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(242, 240, 234, 0.05);
+}
+
+aside h2 {
+    color: var(--mocha-mousse);
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(168, 133, 111, 0.2);
+    padding-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin: 12px 0;
+}
+
+aside a {
+    color: var(--moonlit-grey);
+    text-decoration: none;
+    opacity: 0.85;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+aside a:hover {
+    color: var(--ethereal-blue);
+    padding-left: 6px;
+    opacity: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-content, article {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--mocha-mousse);
+    border-top: 1px solid rgba(242, 240, 234, 0.03);
+    border-right: 1px solid rgba(242, 240, 234, 0.03);
+    border-bottom: 1px solid rgba(242, 240, 234, 0.03);
+}
+
+.main-content h2, article h2 {
+    margin-bottom: 12px;
+    color: var(--ethereal-blue);
+}
+
+/* --- PRODUCT CATEGORIES SUB-GRID --- */
+.product-categories h3 {
+    color: var(--moonlit-grey);
+    margin: 10px 0 5px 0;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.category-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.category-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(242, 240, 234, 0.05);
+    padding: 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-card:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: var(--ethereal-blue);
+}
+
+.category-card h4 {
+    color: var(--ethereal-blue);
+    margin-bottom: 5px;
+    font-size: 1.05rem;
+}
+
+.category-card p {
+    font-size: 0.9rem;
+    color: rgba(242, 240, 234, 0.7);
+}
+
+/* --- ARTICLE INTERIOR DECORATIONS --- */
+.article-badge {
+    display: inline-block;
+    background-color: rgba(168, 133, 111, 0.15);
+    color: var(--mocha-mousse);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    font-size: 0.85rem;
+    color: rgba(242, 240, 234, 0.5);
+    margin-bottom: 15px;
+}
+
+.product-specs {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.product-specs li {
+    font-size: 0.95rem;
+    margin: 10px 0;
+    color: rgba(242, 240, 234, 0.9);
+}
+
+.article-link {
+    display: inline-block;
+    color: var(--ethereal-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.article-link:hover {
+    color: var(--mocha-mousse);
+    transform: translateX(3px);
+}
+
+/* --- BUTTON INTERACTIVE ELEMENT --- */
+button {
+    margin-top: 20px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--mocha-mousse);
+    color: var(--moonlit-grey);
+    font-family: var(--font-headline);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--ethereal-blue);
+    color: var(--dark-neutral);
+    transform: translateY(-1px);
+}
+
+/* --- TERMINAL METADATA (FOOTER) --- */
+footer {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(242, 240, 234, 0.5);
+    border-top: 1px solid rgba(242, 240, 234, 0.05);
+}
+
+/* --- RESPONSIVE SYSTEM BREAKPOINTS --- */
+
+/* Tablet Breakpoint (768px and up) */
+@media (min-width: 768px) {
+    .container {
+        padding: 30px;
+        gap: 30px;
+    }
+    
+    .category-grid {
+        flex-direction: row;
+    }
+    
+    .category-card {
+        flex: 1;
+    }
+}
+
+/* Desktop Breakpoint (1024px and up) -> Switches macro structural layout to 2D Grid */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 260px 1fr;
+        align-items: start;
+    }
+}
